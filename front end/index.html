@@ -3,15 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha página</title>
+  <meta name="theme-color" content="#10111f">
+  <meta name="description" content="Um contador de cliques simples, bonito e fácil de usar.">
+  <title>Cliq — contador de cliques</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main>
-    <h1>Olá, mundo!</h1>
-    <p>Seu projeto front-end está pronto para começar.</p>
-    <button id="botao">Clique aqui</button>
-  </main>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Cliq, início">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>cliq<span class="brand-period">.</span></span>
+      </a>
+      <span class="topbar-label"><span class="live-dot"></span> SEU CONTADOR PESSOAL</span>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> PEQUENAS AÇÕES, GRANDES MARCOS</p>
+        <h1 id="page-title">Cada clique<br>conta<span class="title-period">.</span></h1>
+        <p class="intro-copy">Acompanhe seu ritmo, um toque de cada vez. Sem pressão — só o prazer de ver o número crescer.</p>
+        <div class="goal-note">
+          <span class="goal-icon" aria-hidden="true">✦</span>
+          <span>Sua próxima meta é <strong>100 cliques</strong></span>
+        </div>
+        <p class="keyboard-hint">DICA DO DIA <span>Consistência vale mais que velocidade.</span></p>
+      </section>
+
+      <section class="counter-card" aria-label="Contador de cliques">
+        <div class="card-top">
+          <div>
+            <p class="card-eyebrow">CONTADOR ATUAL</p>
+            <p class="card-subtitle">Seu progresso começa aqui</p>
+          </div>
+          <button class="reset-button" id="reset" type="button" aria-label="Zerar contador" title="Zerar contador" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 2.64-6.36L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="counter-display">
+          <span class="counter-number" id="count" aria-live="polite" aria-atomic="true">0</span>
+          <span class="counter-unit">cliques</span>
+        </div>
+
+        <div class="progress-section">
+          <div class="progress-labels">
+            <span>PROGRESSO DA META</span>
+            <span id="progress-label">0 / 100</span>
+          </div>
+          <div class="progress-track" id="progress" role="progressbar" aria-label="Progresso até a meta de 100 cliques" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="decrement-button" id="decrement" type="button" aria-label="Diminuir um clique" disabled>
+            <span class="minus-icon" aria-hidden="true">−</span>
+            <span>Diminuir</span>
+          </button>
+          <button class="increment-button" id="increment" type="button">
+            <span class="plus-icon" aria-hidden="true">+</span>
+            <span>Registrar clique</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <p class="status-message" id="status" role="status" aria-live="polite">Pronto quando você estiver. Dê o primeiro clique!</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>FEITO PARA IR NO SEU RITMO</span>
+      <span class="footer-decoration"><span></span><span></span><span></span></span>
+    </footer>
+  </div>
 </body>
 </html>
